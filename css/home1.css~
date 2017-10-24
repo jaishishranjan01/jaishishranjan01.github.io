@@ -1,0 +1,112 @@
+html,body
+{
+   margin: 0px;
+   height: 100%;
+}
+
+/*Backgrounds*/
+.home{	
+  width: 100%;
+  margin: 0;
+  min-height: 100%;
+  background-image: url("sunrise.jpg");
+}
+.large-header {
+	position:absolute;
+	width: 100%;
+	overflow: hidden;
+	background-size: cover;
+}
+.para2{
+	background-image: url("../images/bcg_slide-1.jpg");
+	min-height: 100%;
+}
+.para3{
+	background-image: url("sunrise.jpg");
+	min-height: 100%;
+}
+
+.home, .para2, .para3{
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}  
+/*end of background*/
+
+/* Navigation Bar*/
+.nav{
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+}
+
+.container
+{
+    font-family: Raleway;
+	padding: 2em 1em;
+	text-align: center;
+}
+
+.container a
+{
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 1%;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.borderYtoX a:before, div.borderYtoX a:after
+{
+    position: absolute;
+    opacity: 1;
+    height: 100%;
+    width: 4px;
+    content: '';
+    background: linear-gradient(to top, #483078, #301860, #001848, #000000);
+    transition: all 0.3s;
+}
+
+.borderYtoX a:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+.borderYtoX a:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+.borderYtoX a:hover:before, div.borderYtoX a:hover:after
+{
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+}
+a.active {
+    color: red;
+}
+
+a:hover:not(.active) {
+    color: red;
+}
+a:not(.active)
+{
+	color: #4682B4;
+}
+/*End of Navigation Bar*/
+
+/*Something about me*/
+#container1{
+	background-color: rgba(240,248,255,0.1);
+	margin-top: 12em;
+	display: inline-block;
+	width: 100%;
+}
+

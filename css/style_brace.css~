@@ -1,0 +1,75 @@
+
+.con_about a {
+  margin: 0 auto;
+  width: 26%;
+  display: block;
+  min-width: 200px;
+  position: relative;
+}
+
+.con_about a:hover .hexa {
+  background: #555;
+}
+
+.hexa {
+  width: 100%;
+  min-width: 200px;
+  height: 0;
+  padding-bottom: 57.7%;
+  margin: 30% 0 0;
+  background: #136F92;
+  position: absolute;
+  color: #FFF;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 30px;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out;
+  -webkit-transition-delay: 0s;
+  transition: all 0.2s ease-in-out 0s;
+  border-radius: 2%/10%;
+}
+
+.hexa::before, .hexa::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  padding: inherit;
+  background: inherit;
+  -moz-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
+  z-index: 0;
+  position: absolute;
+  border-radius: inherit;
+}
+
+.hexa::after {
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+
+.con_about.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.vertical-align {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.con_about.text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
