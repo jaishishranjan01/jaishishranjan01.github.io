@@ -352,42 +352,50 @@ export default function Portfolio() {
               <span>{profile.relocation}</span>
             </div>
 
-            <div className="flex justify-center">
-              <div className="animate-drop-in liquid-bubble glass-pill inline-flex items-center gap-1 px-2 py-2">
-                {[
-                  { href: `mailto:${profile.email}`, label: 'Email', icon: <Mail size={20} />, external: false },
-                  { href: profile.github, label: 'GitHub', icon: <GithubIcon className="w-5 h-5" />, external: true },
-                  { href: profile.linkedin, label: 'LinkedIn', icon: <LinkedinIcon className="w-5 h-5" />, external: true },
-                ].map((link) => (
-                  <React.Fragment key={link.label}>
-                    <a
-                      href={link.href}
-                      title={link.label}
-                      aria-label={link.label}
-                      target={link.external ? '_blank' : undefined}
-                      rel={link.external ? 'noopener noreferrer' : undefined}
-                      className="w-12 h-12 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-300 hover:scale-110 transition-transform"
-                    >
-                      {link.icon}
-                    </a>
-                    <span className="w-px h-6 bg-slate-400/30 dark:bg-slate-500/30" />
-                  </React.Fragment>
-                ))}
-
+            <div className="flex flex-wrap justify-center items-center gap-4">
+              {[
+                { href: `mailto:${profile.email}`, label: 'Email', icon: <Mail size={20} />, external: false },
+                { href: profile.github, label: 'GitHub', icon: <GithubIcon className="w-5 h-5" />, external: true },
+                { href: profile.linkedin, label: 'LinkedIn', icon: <LinkedinIcon className="w-5 h-5" />, external: true },
+              ].map((link, i) => (
                 <a
-                  href={profile.leetcode}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={`LeetCode · ${leetcodeStats.solved} solved (${leetcodeStats.easy}E / ${leetcodeStats.medium}M / ${leetcodeStats.hard}H)`}
-                  aria-label="LeetCode"
-                  className="h-12 px-4 rounded-full flex items-center gap-2 text-amber-600 dark:text-amber-400 hover:scale-110 transition-transform"
+                  key={link.label}
+                  href={link.href}
+                  title={link.label}
+                  aria-label={link.label}
+                  target={link.external ? '_blank' : undefined}
+                  rel={link.external ? 'noopener noreferrer' : undefined}
+                  style={{ animationDelay: `${i * 0.12}s` }}
+                  className="animate-drop-in liquid-bubble glass-pill w-14 h-14 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-300 hover:scale-110 hover:-translate-y-1 transition-transform"
                 >
-                  <Code2 size={18} />
-                  <span className="text-sm font-bold text-slate-700 dark:text-slate-200">
-                    {leetcodeStats.solved}
-                  </span>
+                  {link.icon}
                 </a>
-              </div>
+              ))}
+
+              <a
+                href={profile.leetcode}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LeetCode"
+                aria-label="LeetCode"
+                style={{ animationDelay: '0.36s' }}
+                className="animate-drop-in liquid-bubble glass-pill w-14 rounded-[28px] flex flex-col items-center gap-1.5 px-2 py-3 hover:scale-110 hover:-translate-y-1 transition-transform"
+              >
+                <Code2 size={18} className="text-amber-600 dark:text-amber-400" />
+                <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200">
+                  {leetcodeStats.solved}
+                </span>
+                <span className="w-6 border-t border-slate-400/30 dark:border-slate-500/30" />
+                <span className="text-[9px] font-bold text-emerald-600 dark:text-emerald-400">
+                  {leetcodeStats.easy}E
+                </span>
+                <span className="text-[9px] font-bold text-amber-600 dark:text-amber-400">
+                  {leetcodeStats.medium}M
+                </span>
+                <span className="text-[9px] font-bold text-rose-600 dark:text-rose-400">
+                  {leetcodeStats.hard}H
+                </span>
+              </a>
             </div>
 
             <div className="lg:hidden glass-card p-8 sm:p-10 text-left">
